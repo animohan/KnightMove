@@ -1,3 +1,4 @@
+
 class node{
 	int nodepos_i, nodepos_j;
 	String nodeVal="0";
@@ -19,11 +20,11 @@ class node{
 	}
 	
 	int[][] getNeighbor(){
-		int neighbors[][]={{-1,-1},{-1,-1},{-1,-1},{-1,-1},{-1,-1},{-1,-1}};
+		int neighbors[][]={{-1,-1},{-1,-1},{-1,-1},{-1,-1},{-1,-1},{-1,-1},{-1,-1},{-1,-1}};
 		int index=0;
 		for(int i=-2;i<3;i++){
 			 for(int j=-2;j<3;j++){
-				 if(((i==-2 && j==-1)||(i==-2 && j==1)||(i==-1 && j==-2)||(i==-1 && j==2)||(i==1 && j==-2)||(i==1 && j==2)||(i==2 && j==-1)||(i==2 && j==1))&&(nodepos_i+i>0)&&(nodepos_i+i<8)&&(nodepos_j+j>0)&&(nodepos_j+j<8)){
+				 if(((i==-2 && j==-1)||(i==-2 && j==1)||(i==-1 && j==-2)||(i==-1 && j==2)||(i==1 && j==-2)||(i==1 && j==2)||(i==2 && j==-1)||(i==2 && j==1))&&(nodepos_i+i>=0)&&(nodepos_i+i<8)&&(nodepos_j+j>=0)&&(nodepos_j+j<8)){
 					neighbors[index][0]=nodepos_i+i;
 					neighbors[index][1]=nodepos_j+j;
 					index++;
@@ -98,6 +99,8 @@ class kMovesdfs{
 			 for(int i=0;i<7;i++){
 				 if(listofneighbors[i][0]!=-1 ){
 					 if(cboard[listofneighbors[i][0]][listofneighbors[i][1]].nodeVisited==true){
+						 			 
+						 
 						 continue;
 					 }
 					 else {
@@ -109,6 +112,7 @@ class kMovesdfs{
 					 }
 				 }
 				 else{
+					 System.out.println();
 					return; 
 					 
 				 }
@@ -118,3 +122,4 @@ class kMovesdfs{
 			  
 	}
 }
+
